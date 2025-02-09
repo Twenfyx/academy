@@ -47,9 +47,9 @@ const AboutUsPage: React.FC = () => {
           <div className="bg-white rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl">
             <img src={require('../images/5.jpg')} alt="Trener Alex" className="w-full h-80 object-cover rounded-t-lg object-top" />
             <div className="p-6">
-              <h3 className="text-3xl font-bold text-orange-500">Alex</h3>
+              <h3 className="text-3xl font-bold text-orange-500">Aleks</h3>
               <p className="mt-4 text-gray-700">
-                Cześć! Jestem Alex – trener personalny specjalizujący się w treningu siłowym i regeneracyjnym. Pomagam w rozwoju siły i wytrzymałości, a także w pracy z osobami trenującymi drużynowo.
+                Cześć! Jestem Aleks – trener personalny specjalizujący się w treningu siłowym i regeneracyjnym. Pomagam w rozwoju siły i wytrzymałości, a także w pracy z osobami trenującymi drużynowo.
               </p>
             </div>
           </div>
