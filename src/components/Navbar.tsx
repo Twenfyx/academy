@@ -14,16 +14,16 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center py-4 relative">
           {/* Social Media Icons */}
           <div className="flex items-center space-x-4">
-            <Link to="#">
-              <img src={facebookIcon} alt="Facebook Icon" className="h-8 transition transform hover:scale-110" />
+            <Link to="https://www.facebook.com/hasacademytorun/" target="_blank">
+              <img src={facebookIcon} alt="Facebook Icon" className="h-6 transition transform hover:scale-110" />
             </Link>
-            <Link to="#">
-              <img src={instagramIcon} alt="Instagram Icon" className="h-8 transition transform hover:scale-110" />
+            <Link to="https://www.instagram.com/hasacademypl" target="_blank">
+              <img src={instagramIcon} alt="Instagram Icon" className="h-6 transition transform hover:scale-110" />
             </Link>
           </div>
           
           {/* Centered Logo */}
-          <div className="absolute left-1/2 transform -translate-x-1/2">
+          <div className="absolute left-1/2 transform -translate-x-1/2 transition transform hover:scale-110">
             <Link to="/" className="text-3xl font-extrabold text-orange-500">
               HasAcademy
             </Link>
@@ -32,9 +32,9 @@ const Navbar: React.FC = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             {/* <Link to="/studio" className="nav-link">Studio Kadru</Link> */}
-            <Link to="/about" className="nav-link">O nas</Link>
-            <Link to="/cennik" className="nav-link">Oferta</Link>
-            <Link to="/kontakt" className="nav-link">Kontakt</Link>
+            {/* <Link to="/about" className="text-lg font-sans font-semibold">O nas</Link> */}
+            <Link to="/cennik" className="text-base font-sans font-semibold transition transform hover:scale-110">Cennik</Link>
+            <Link to="/kontakt" className="text-base font-sans font-semibold transition transform hover:scale-110">Kontakt</Link>
           </div>
 
           {/* Mobile Menu Button */}
