@@ -1,57 +1,79 @@
+import { useState } from "react";
+
+interface Trainer {
+  name: string;
+  img: string;
+  shortDesc: string;
+  fullDesc: string;
+}
+
+const trainers: Trainer[] = [
+  {
+    name: "Paula",
+    img: require("../images/2.jpg"), // You might need `import` if TypeScript complains
+    shortDesc: "Trener personalny i specjalistka od przygotowania motorycznego.",
+    fullDesc:
+      "Cześć! Jestem Paula – trener personalny i specjalistka od przygotowania motorycznego, szczególnie w tenisie. Pomagam poprawić sprawność, sylwetkę i wyniki sportowe.",
+  },
+  {
+    name: "Mateusz",
+    img: require("../images/3.jpg"),
+    shortDesc: "Trener i współwłaściciel HAS Academy, ekspert w treningu siłowym.",
+    fullDesc:
+      "Jako trener personalny i współwłaściciel HAS Academy, pomagam moim podopiecznym osiągnąć najwyższy poziom kondycji i siły, przygotowując ich do międzynarodowych zawodów.",
+  },
+  {
+    name: "Jakub",
+    img: require("../images/7.jpg"),
+    shortDesc: "Trener medyczny, specjalista od rehabilitacji kolan i ścięgien.",
+    fullDesc:
+      "Jestem Jakub, trener medyczny, łączący fizjoterapię z treningiem. Specjalizuję się w rehabilitacji kolan i ścięgien, pomagając w zdrowieniu po kontuzjach.",
+  },
+  {
+    name: "Aleks",
+    img: require("../images/5.jpg"),
+    shortDesc: "Specjalizuje się w treningu siłowym i regeneracyjnym.",
+    fullDesc:
+      "Jestem Aleks – trener personalny specjalizujący się w treningu siłowym i regeneracyjnym. Pomagam w rozwoju siły i wytrzymałości, a także w pracy z osobami trenującymi drużynowo.",
+  },
+];
+
 const Trenerzy = () => {
   return (
-    <section className="py-24 bg-gradient-to-b from-gray-100 to-gray-200">
-      <div className="max-w-6xl mx-auto text-center px-6">
-        <h2 className="text-4xl font-extrabold text-orange-500 mb-12">Nasi Trenerzy</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          
-          {/* Paula */}
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-            <img src={require('../images/2.jpg')} alt="Trener Paula" className="w-full h-72 object-cover" />
-            <div className="p-6">
-              <h3 className="text-2xl font-semibold text-orange-500">Paula</h3>
-              <p className="mt-3 text-gray-600">
-                Specjalistka od przygotowania motorycznego w tenisie. Pomagam w budowie formy i poprawie wyników sportowych.
-              </p>
-            </div>
-          </div>
-
-          {/* Mateusz */}
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-            <img src={require('../images/3.jpg')} alt="Trener Mateusz" className="w-full h-72 object-cover" />
-            <div className="p-6">
-              <h3 className="text-2xl font-semibold text-orange-500">Mateusz</h3>
-              <p className="mt-3 text-gray-600">
-                Trener personalny i współwłaściciel HAS Academy. Przygotowuję podopiecznych do osiągania mistrzowskiej formy.
-              </p>
-            </div>
-          </div>
-
-          {/* Jakub */}
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-            <img src={require('../images/7.jpg')} alt="Trener Jakub" className="w-full h-72 object-cover" />
-            <div className="p-6">
-              <h3 className="text-2xl font-semibold text-orange-500">Jakub</h3>
-              <p className="mt-3 text-gray-600">
-                Łączę fizjoterapię z treningiem. Specjalizuję się w rehabilitacji kolan i ścięgien po urazach.
-              </p>
-            </div>
-          </div>
-
-          {/* Aleks */}
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-            <img src={require('../images/5.jpg')} alt="Trener Alex" className="w-full h-72 object-cover" />
-            <div className="p-6">
-              <h3 className="text-2xl font-semibold text-orange-500">Aleks</h3>
-              <p className="mt-3 text-gray-600">
-                Specjalizuję się w treningu siłowym i regeneracyjnym. Pomagam budować siłę i wytrzymałość.
-              </p>
-            </div>
-          </div>
-
+    <div className="py-20 bg-gray-100">
+      <div className="max-w-6xl mx-auto text-center">
+        <h2 className="text-4xl font-extrabold text-orange-500 mb-8">Nasi Trenerzy</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          {trainers.map((trainer, index) => (
+            <TrainerCard key={index} trainer={trainer} />
+          ))}
         </div>
       </div>
-    </section>
+    </div>
+  );
+};
+
+interface TrainerCardProps {
+  trainer: Trainer;
+}
+
+const TrainerCard: React.FC<TrainerCardProps> = ({ trainer }) => {
+  const [showMore, setShowMore] = useState(false);
+
+  return (
+    <div className="bg-white rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+      <img src={trainer.img} alt={`Trener ${trainer.name}`} className="w-full h-80 object-cover rounded-t-lg object-top" />
+      <div className="p-6 text-center">
+        <h3 className="text-3xl font-bold text-orange-500">{trainer.name}</h3>
+        <p className="mt-2 text-gray-700">{showMore ? trainer.fullDesc : trainer.shortDesc}</p>
+        <button
+          className="mt-4 text-orange-500 font-semibold hover:underline transition duration-300"
+          onClick={() => setShowMore(!showMore)}
+        >
+          {showMore ? "Pokaż mniej" : "Czytaj więcej"}
+        </button>
+      </div>
+    </div>
   );
 };
 

@@ -1,6 +1,6 @@
 const Uslugi = () => {
   return (
-    <section className="py-24 bg-gradient-to-b from-gray-100 to-gray-200">
+    <section className="py-24 bg-gradient-to-b from-gray-200 to-gray-200">
       <div className="max-w-5xl mx-auto text-center px-6">
         <h2 className="text-4xl font-extrabold text-orange-500 mb-12">Nasze Usługi</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
