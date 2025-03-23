@@ -1,4 +1,5 @@
 import { useState } from "react";
+import logo from "../images/logo.jpg";
 
 interface Trainer {
   name: string;
@@ -15,13 +16,7 @@ const trainers: Trainer[] = [
     fullDesc:
       "Cześć! Jestem Paula – trener personalny i specjalistka od przygotowania motorycznego, szczególnie w tenisie. Pomagam poprawić sprawność, sylwetkę i wyniki sportowe.",
   },
-  {
-    name: "Mateusz",
-    img: require("../images/33.jpg"),
-    shortDesc: "Trener i współwłaściciel HAS Academy, ekspert w treningu siłowym.",
-    fullDesc:
-      "Jako trener personalny i współwłaściciel HAS Academy, pomagam moim podopiecznym osiągnąć najwyższy poziom kondycji i siły, przygotowując ich do międzynarodowych zawodów.",
-  },
+
   {
     name: "Jakub",
     img: require("../images/77.jpg"),
@@ -42,11 +37,17 @@ const Trenerzy = () => {
   return (
     <div className="py-24 bg-white">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-5xl font-bold text-orange-600 mb-16">Nasi Trenerzy</h2>
+       
+
+        <h2 className="text-4xl font-extrabold text-orange-500 mb-16">Nasi Trenerzy</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-16">
           {trainers.map((trainer, index) => (
             <TrainerCard key={index} trainer={trainer} />
           ))}
+        </div>
+         {/* Logo Section */}
+         <div className="flex justify-center mt-16">
+          <img src={logo} alt="HAS Academy Logo" className="h-32 w-auto" />
         </div>
       </div>
     </div>

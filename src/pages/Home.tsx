@@ -9,7 +9,7 @@ import KontaktHome from '../components/KontaktHome';
 
 const Home: React.FC = () => {
   return (
-    <div className="bg-gray-100">
+    <div className="">
       <Navbar />
 
       {/* Sekcja Home */}

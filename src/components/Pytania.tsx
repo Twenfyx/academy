@@ -1,4 +1,5 @@
 import { useState } from "react";
+import logo from "../images/logo.jpg";
 
 const faqData = [
   {
@@ -18,11 +19,17 @@ const faqData = [
 const Pytania = () => {
   return (
     <div className="my-20 text-center pt-8">
-      <h3 className="text-4xl font-extrabold text-orange-500 mb-8">Najczęściej Zadawane Pytania</h3>
+      {/* Logo Section */}
+     
+
+      <h3 className="text-4xl font-extrabold text-orange-500 mb-12">Najczęściej Zadawane Pytania</h3>
       <div className="max-w-3xl mx-auto text-left text-gray-700 space-y-4">
         {faqData.map((item, index) => (
           <FAQItem key={index} question={item.question} answer={item.answer} />
         ))}
+      </div>
+      <div className="flex justify-center mt-8">
+        <img src={logo} alt="HAS Academy Logo" className="h-32 w-auto" />
       </div>
     </div>
   );

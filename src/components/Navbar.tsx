@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import facebookIcon from '../icons/facebook.png';
-import instagramIcon from '../icons/instagram.png';
+
+import facebookIconBlack from '../icons/facebookB.png';
+import instagramIconBlack from '../icons/instagramB.png';
+import logoNobg from '../images/logoNobg.png';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,32 +11,30 @@ const Navbar: React.FC = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="bg-black text-white shadow-lg">
+    <nav className="bg-gray-200 shadow-md">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center py-4 relative">
           {/* Social Media Icons */}
           <div className="flex items-center space-x-4">
             <Link to="https://www.facebook.com/hasacademytorun/" target="_blank">
-              <img src={facebookIcon} alt="Facebook Icon" className="h-6 transition transform hover:scale-110" />
+              <img src={facebookIconBlack} alt="Facebook Icon" className="h-8 transition transform hover:scale-110 hover:opacity-80" />
             </Link>
             <Link to="https://www.instagram.com/hasacademypl" target="_blank">
-              <img src={instagramIcon} alt="Instagram Icon" className="h-6 transition transform hover:scale-110" />
+              <img src={instagramIconBlack} alt="Instagram Icon" className="h-8 transition transform hover:scale-110 hover:opacity-80" />
             </Link>
           </div>
-          
-          {/* Centered Logo */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 transition transform hover:scale-110">
-            <Link to="/" className="text-3xl font-extrabold text-orange-500">
-              HasAcademy
+
+          {/* Centered Logo with Link */}
+          <div className="absolute left-1/2 transform -translate-x-1/2">
+            <Link to="/" className="flex items-center justify-center">
+              <img src={logoNobg} alt="HAS Academy Logo" className="h-20 drop-shadow-lg transition transform hover:scale-105" />
             </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            {/* <Link to="/studio" className="nav-link">Studio Kadru</Link> */}
-            {/* <Link to="/about" className="text-lg font-sans font-semibold">O nas</Link> */}
-            <Link to="/cennik" className="text-base font-sans font-semibold transition transform hover:scale-110">Cennik</Link>
-            <Link to="/kontakt" className="text-base font-sans font-semibold transition transform hover:scale-110">Kontakt</Link>
+            <Link to="/cennik" className="text-lg font-bold transition transform hover:scale-110 hover:text-orange-500">Cennik</Link>
+            <Link to="/kontakt" className="text-lg font-bold transition transform hover:scale-110 hover:text-orange-500">Kontakt</Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -50,11 +50,9 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden px-4 pt-2 pb-4 space-y-2 bg-gray-900">
-          <Link to="/studio" className="mobile-nav-link">Studio Kadru</Link>
-          <Link to="/about" className="mobile-nav-link">O nas</Link>
-          <Link to="/cennik" className="mobile-nav-link">Oferta</Link>
-          <Link to="/kontakt" className="mobile-nav-link">Kontakt</Link>
+        <div className="md:hidden px-6 pt-2 pb-4 space-y-3 bg-gray-800 transition-all duration-300">
+          <Link to="/cennik" className="block text-lg text-white py-2 hover:text-orange-500 transition">Cennik</Link>
+          <Link to="/kontakt" className="block text-lg text-white py-2 hover:text-orange-500 transition">Kontakt</Link>
         </div>
       )}
     </nav>
@@ -62,4 +60,3 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
-
