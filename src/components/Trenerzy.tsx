@@ -40,11 +40,15 @@ const Trenerzy = () => {
        
 
         <h2 className="text-4xl font-extrabold text-orange-500 mb-16">Nasi Trenerzy</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-16">
-          {trainers.map((trainer, index) => (
-            <TrainerCard key={index} trainer={trainer} />
-          ))}
-        </div>
+        <div className="flex justify-center">
+  <div className="flex justify-center gap-16">
+    {trainers.map((trainer, index) => (
+      <TrainerCard key={index} trainer={trainer} />
+    ))}
+  </div>
+</div>
+
+
          {/* Logo Section */}
          <div className="flex justify-center mt-16">
           <img src={logo} alt="HAS Academy Logo" className="h-32 w-auto" />
