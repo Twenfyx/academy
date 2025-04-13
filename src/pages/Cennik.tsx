@@ -7,50 +7,62 @@ const Cennik: React.FC = () => {
   return (
     <div className="bg-gray-100">
       <Navbar />
-      <div className="max-w-7xl mx-auto text-center py-20">
-      <h2 className="text-4xl font-extrabold text-orange-500 mb-6">Nasza Oferta Cennikowa</h2>
-        {/* <h2 className="text-5xl font-bold text-orange-500 mb-8"></h2> */}
-        <p className="text-lg text-gray-700 mb-16">
-          Oferujemy różnorodne usługi dostosowane do Twoich potrzeb. Wybierz opcję, która najlep  iej odpowiada Twoim wymaganiom.
+      
+
+        <div className="max-w-7xl mx-auto text-center py-20">
+  <h2 className="text-4xl font-extrabold text-orange-500 mb-6">Nasza Oferta Cennikowa</h2>
+  <p className="text-lg text-gray-700 mb-16">
+    Oferujemy różnorodne formy treningów dopasowane do Twoich potrzeb i możliwości. Sprawdź, która opcja będzie dla Ciebie najlepsza.
+  </p>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+    <div className="bg-white rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl">
+      <div className="p-6">
+        <h3 className="text-3xl font-bold text-orange-500">Treningi Personalne Indywidualne</h3>
+        <p className="mt-4 text-gray-700">
+          Godzinne treningi pod okiem wykwalifikowanego Trenera – w pełni dopasowane do Twoich celów.
         </p>
+      </div>
+    </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-  
-          <div className="bg-white rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl">
-            <div className="p-6">
-              <h3 className="text-3xl font-bold text-orange-500">Pojedynczy Trening</h3>
-              <p className="mt-4 text-gray-700">Indywidualny trening personalny dostosowany do Twoich potrzeb.</p>
-              <div className="text-2xl font-bold text-orange-500 mt-4">170 PLN</div>
-            </div>
-          </div>
+    <div className="bg-white rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl">
+      <div className="p-6">
+        <h3 className="text-3xl font-bold text-orange-500">Treningi Przygotowania Motorycznego</h3>
+        <p className="mt-4 text-gray-700">
+          Idealne dla osób aktywnych – zarówno zawodowców, jak i pasjonatów sportu, którzy chcą poprawić swoje wyniki.
+        </p>
+      </div>
+    </div>
+
+    <div className="bg-white rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl">
+      <div className="p-6">
+        <h3 className="text-3xl font-bold text-orange-500">Treningi w Parze</h3>
+        <p className="mt-4 text-gray-700">
+          Trenuj z bliską osobą – koleżanką, partnerem, siostrą czy synem. Wspólna motywacja to klucz do sukcesu!
+        </p>
+      </div>
+    </div>
+
+    <div className="bg-white rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl">
+      <div className="p-6">
+        <h3 className="text-3xl font-bold text-orange-500">Treningi Grupowe</h3>
+        <p className="mt-4 text-gray-700">
+          Kameralne grupy od 4 do 8 osób – dynamiczne i motywujące zajęcia w świetnej atmosferze.
+        </p>
+      </div>
+    </div>
+
+    <div className="bg-white rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl md:col-span-2">
+      <div className="p-6">
+        <h3 className="text-3xl font-bold text-orange-500">Treningi Medyczne i Rehabilitacja</h3>
+        <p className="mt-4 text-gray-700">
+          Dla osób z problemami układu ruchu, w trakcie powrotu do sprawności lub potrzebujących kompleksowej rehabilitacji.
+        </p>
+      </div>
+    </div>
+  </div>
 
 
-          <div className="bg-white rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl">
-            <div className="p-6">
-              <h3 className="text-3xl font-bold text-orange-500">Pakiet Treningowy</h3>
-              <p className="mt-4 text-gray-700">Dla regularnych ćwiczących – elastyczny wybór liczby sesji.</p>
-              <div className="text-2xl font-bold text-orange-500 mt-4">od 150 PLN</div>
-            </div>
-          </div>
-
-   
-          <div className="bg-white rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl">
-            <div className="p-6">
-              <h3 className="text-3xl font-bold text-orange-500">Trening w Parach</h3>
-              <p className="mt-4 text-gray-700">Trenuj z partnerem i wspólnie osiągajcie cele.</p>
-              <div className="text-2xl font-bold text-orange-500 mt-4">od 180 PLN</div>
-            </div>
-          </div>
-
-       
-          <div className="bg-white rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl">
-            <div className="p-6">
-              <h3 className="text-3xl font-bold text-orange-500">Fizjoterapia</h3>
-              <p className="mt-4 text-gray-700">Profesjonalna pomoc w regeneracji i rehabilitacji.</p>
-              <div className="text-2xl font-bold text-orange-500 mt-4">170 PLN</div>
-            </div>
-          </div>
-        </div>
 
        
         <div className="mt-24 bg-orange-600 text-white py-16 rounded-xl shadow-lg">

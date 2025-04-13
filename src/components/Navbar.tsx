@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import facebookIconBlack from '../icons/facebookB.png';
-import instagramIconBlack from '../icons/instagramB.png';
+import facebookIconBlack from '../icons/facebook.png';
+import instagramIconBlack from '../icons/instagram.png';
 import logoNobg from '../images/logoNobg.png';
 
 const Navbar: React.FC = () => {
@@ -17,10 +17,10 @@ const Navbar: React.FC = () => {
           {/* Social Media Icons */}
           <div className="flex items-center space-x-4">
             <Link to="https://www.facebook.com/hasacademytorun/" target="_blank">
-              <img src={facebookIconBlack} alt="Facebook Icon" className="h-8 transition transform hover:scale-110 hover:opacity-80" />
+              <img src={facebookIconBlack} alt="Facebook Icon" className="h-9 transition transform hover:scale-110 hover:opacity-80" />
             </Link>
             <Link to="https://www.instagram.com/hasacademypl" target="_blank">
-              <img src={instagramIconBlack} alt="Instagram Icon" className="h-8 transition transform hover:scale-110 hover:opacity-80" />
+              <img src={instagramIconBlack} alt="Instagram Icon" className="h-9 transition transform hover:scale-110 hover:opacity-80" />
             </Link>
           </div>
 
