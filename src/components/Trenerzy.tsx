@@ -31,26 +31,30 @@ const trainers: Trainer[] = [
     fullDesc:
       "Jestem Aleks – trener personalny specjalizujący się w treningu siłowym i regeneracyjnym. Pomagam w rozwoju siły i wytrzymałości, a także w pracy z osobami trenującymi drużynowo.",
   },
+  {
+    name: "Natalia",
+    img: require("../images/22.jpg"), // Zmień ścieżkę do obrazu na odpowiednią
+    shortDesc: "Trener personalny, magister dietetyki i instruktorka tańca High Heels i Hip-Hop.",
+    fullDesc:
+      "Cześć! Nazywam się Natalia i jestem trenerem personalnym, magistrem dietetyki oraz instruktorką tańca High Heels i Hip-Hop. Na co dzień prowadzę zarówno treningi indywidualne, jak i zajęcia grupowe, łącząc w swojej pracy wszystkie pasje – ruch, zdrowie i taniec.\n\nDo każdej osoby podchodzę indywidualnie i holistycznie, dbając nie tylko o efekty fizyczne, ale także o dobre samopoczucie i pewność siebie moich podopiecznych. Podczas treningów ze mną możesz liczyć na pełne wsparcie, wyrozumiałość, uważność na Twoje potrzeby oraz komfortową atmosferę, w której poczujesz się swobodnie i zmotywowanie.\n\nWierzę, że ruch to nie tylko droga do zdrowia, ale także do większej pewności siebie i radości z własnego ciała.",
+  },
 ];
 
 const Trenerzy = () => {
   return (
     <div className="py-24 bg-white">
       <div className="max-w-6xl mx-auto text-center">
-       
-
         <h2 className="text-4xl font-extrabold text-orange-500 mb-16">Nasi Trenerzy</h2>
         <div className="flex justify-center">
-  <div className="flex justify-center gap-16">
-    {trainers.map((trainer, index) => (
-      <TrainerCard key={index} trainer={trainer} />
-    ))}
-  </div>
-</div>
+          <div className="flex justify-center gap-16">
+            {trainers.map((trainer, index) => (
+              <TrainerCard key={index} trainer={trainer} />
+            ))}
+          </div>
+        </div>
 
-
-         {/* Logo Section */}
-         <div className="flex justify-center mt-16">
+        {/* Logo Section */}
+        <div className="flex justify-center mt-16">
           <img src={logo} alt="HAS Academy Logo" className="h-32 w-auto" />
         </div>
       </div>
