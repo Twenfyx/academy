@@ -1,6 +1,6 @@
 const Uslugi = () => {
   return (
-    <section className="py-24 bg-gradient-to-b from-gray-200 to-gray-300">
+    <section className="py-24 bg-gradient-to-b from-gray-200 to-gray-200">
       <div className="max-w-7xl mx-auto text-center px-6">
         <h2 className="text-4xl font-extrabold text-orange-500 mb-12">Nasze Usługi</h2>
         <div className="grid grid-cols-1 gap-10">
@@ -16,6 +16,7 @@ const Uslugi = () => {
               </div>
             </div>
           </div>
+
 
 
           {/* Second row - three items */}

@@ -1,102 +1,150 @@
 // Cennik.tsx
 import React from 'react';
 import Navbar from '../components/Navbar';
-import KontaktHome from '../components/KontaktHome';
 
 const Cennik: React.FC = () => {
   return (
-    <div className="bg-gray-100">
+    <div className="bg-gray-100 min-h-screen">
       <Navbar />
-      
 
-        <div className="max-w-7xl mx-auto text-center py-20">
-  <h2 className="text-4xl font-extrabold text-orange-500 mb-6">Nasza Oferta Cennikowa</h2>
-  <p className="text-lg text-gray-700 mb-16">
-    Oferujemy różnorodne formy treningów dopasowane do Twoich potrzeb i możliwości. Sprawdź, która opcja będzie dla Ciebie najlepsza.
-  </p>
+      <div className="max-w-6xl mx-auto py-16 px-4">
+        <h2 className="text-4xl font-extrabold text-orange-500 text-center mb-8">Cennik Treningów</h2>
 
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-    <div className="bg-white rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl">
-      <div className="p-6">
-        <h3 className="text-3xl font-bold text-orange-500">Treningi Personalne Indywidualne</h3>
-        <p className="mt-4 text-gray-700">
-          Godzinne treningi pod okiem wykwalifikowanego Trenera – w pełni dopasowane do Twoich celów.
-        </p>
-      </div>
-    </div>
+        {/* Treningi Personalne */}
+        <div className="mb-12">
+          <h3 className="text-2xl font-bold text-gray-800 mb-4">Pakiety Treningów Personalnych</h3>
+          <table className="min-w-full bg-white border border-gray-200 rounded-lg overflow-hidden">
+            <thead className="bg-orange-500 text-white">
+              <tr>
+                <th className="py-3 px-4">Ilość / tydzień</th>
+                <th className="py-3 px-4">1 miesiąc</th>
+                <th className="py-3 px-4">2 miesiące</th>
+                <th className="py-3 px-4">3 miesiące</th>
+                <th className="py-3 px-4">Cena za trening</th>
+              </tr>
+            </thead>
+            <tbody className="text-center text-gray-700">
+              <tr className="border-t">
+                <td className="py-2 px-4">1</td>
+                <td className="py-2 px-4">676 zł</td>
+                <td className="py-2 px-4">845 zł</td>
+                <td className="py-2 px-4">x</td>
+                <td className="py-2 px-4">149 zł</td>
+              </tr>
+              <tr className="border-t">
+                <td className="py-2 px-4">2</td>
+                <td className="py-2 px-4">1192 zł</td>
+                <td className="py-2 px-4">x</td>
+                <td className="py-2 px-4">x</td>
+                <td className="py-2 px-4">159 zł</td>
+              </tr>
+              <tr className="border-t">
+                <td className="py-2 px-4">3</td>
+                <td className="py-2 px-4">1272 zł</td>
+                <td className="py-2 px-4">x</td>
+                <td className="py-2 px-4">x</td>
+                <td className="py-2 px-4">169 zł</td>
+              </tr>
+            </tbody>
+          </table>
+          <p className="text-sm text-gray-500 mt-2 italic">* Płatność miesięczna z góry</p>
+        </div>
 
-    <div className="bg-white rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl">
-      <div className="p-6">
-        <h3 className="text-3xl font-bold text-orange-500">Treningi Przygotowania Motorycznego</h3>
-        <p className="mt-4 text-gray-700">
-          Idealne dla osób aktywnych – zarówno zawodowców, jak i pasjonatów sportu, którzy chcą poprawić swoje wyniki.
-        </p>
-      </div>
-    </div>
+        {/* Treningi Grupowe */}
+        <div className="mb-12">
+          <h3 className="text-2xl font-bold text-gray-800 mb-4">Treningi Grupowe</h3>
+          <table className="min-w-full bg-white border border-gray-200 rounded-lg overflow-hidden">
+            <thead className="bg-orange-500 text-white">
+              <tr>
+                <th className="py-3 px-4">Liczba osób</th>
+                <th className="py-3 px-4">Cena za osobę</th>
+                <th className="py-3 px-4">Cena miesięczna</th>
+              </tr>
+            </thead>
+            <tbody className="text-center text-gray-700">
+              <tr className="border-t">
+                <td className="py-2 px-4">2 osoby</td>
+                <td className="py-2 px-4">90 zł</td>
+                <td className="py-2 px-4">360 zł</td>
+              </tr>
+              <tr className="border-t">
+                <td className="py-2 px-4">3 osoby</td>
+                <td className="py-2 px-4">80 zł</td>
+                <td className="py-2 px-4">320 zł</td>
+              </tr>
+              <tr className="border-t">
+                <td className="py-2 px-4">4 osoby</td>
+                <td className="py-2 px-4">70 zł</td>
+                <td className="py-2 px-4">280 zł</td>
+              </tr>
+              <tr className="border-t">
+                <td className="py-2 px-4">5+ osób</td>
+                <td className="py-2 px-4">50 zł</td>
+                <td className="py-2 px-4">250 zł</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-    <div className="bg-white rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl">
-      <div className="p-6">
-        <h3 className="text-3xl font-bold text-orange-500">Treningi w Parze</h3>
-        <p className="mt-4 text-gray-700">
-          Trenuj z bliską osobą – koleżanką, partnerem, siostrą czy synem. Wspólna motywacja to klucz do sukcesu!
-        </p>
-      </div>
-    </div>
+        {/* Rehabilitacja */}
+        <div className="mb-20">
+          <h3 className="text-2xl font-bold text-gray-800 mb-4">Rehabilitacja</h3>
+          <table className="min-w-full bg-white border border-gray-200 rounded-lg overflow-hidden">
+            <thead className="bg-orange-500 text-white">
+              <tr>
+                <th className="py-3 px-4">Opcja</th>
+                <th className="py-3 px-4">Cena</th>
+              </tr>
+            </thead>
+            <tbody className="text-center text-gray-700">
+              <tr className="border-t">
+                <td className="py-2 px-4">1 wizyta</td>
+                <td className="py-2 px-4">170 zł</td>
+              </tr>
+              <tr className="border-t">
+                <td className="py-2 px-4">Pakiet 7 + 1</td>
+                <td className="py-2 px-4">1190 zł</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-    <div className="bg-white rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl">
-      <div className="p-6">
-        <h3 className="text-3xl font-bold text-orange-500">Treningi Grupowe</h3>
-        <p className="mt-4 text-gray-700">
-          Kameralne grupy od 4 do 8 osób – dynamiczne i motywujące zajęcia w świetnej atmosferze.
-        </p>
-      </div>
-    </div>
-
-    <div className="bg-white rounded-lg shadow-lg transform hover:scale-105 hover:shadow-2xl md:col-span-2">
-      <div className="p-6">
-        <h3 className="text-3xl font-bold text-orange-500">Treningi Medyczne i Rehabilitacja</h3>
-        <p className="mt-4 text-gray-700">
-          Dla osób z problemami układu ruchu, w trakcie powrotu do sprawności lub potrzebujących kompleksowej rehabilitacji.
-        </p>
-      </div>
-    </div>
-  </div>
-
-
-
-       
-        <div className="mt-24 bg-orange-600 text-white py-16 rounded-xl shadow-lg">
-          <h3 className="text-3xl font-bold mb-6">Zacznij już teraz!</h3>
-          <p className="text-lg mb-6 max-w-3xl mx-auto">
-            Nie czekaj – wybierz odpowiednią usługę i zacznij swoją podróż do lepszej formy. Skontaktuj się z nami już dziś!
-          </p>
+        {/* CTA */}
+        <div className="bg-orange-600 text-white py-12 px-6 rounded-xl text-center shadow-lg">
+          <h3 className="text-3xl font-bold mb-4">Zacznij już teraz!</h3>
+          <p className="mb-6 text-lg">Wybierz najlepszą opcję i skontaktuj się z nami, aby rozpocząć swoją przygodę z HAS Academy.</p>
           <a
             href="/contact"
-            className="bg-white text-orange-600 px-8 py-4 text-lg font-semibold rounded-full shadow-md hover:bg-orange-500 transition duration-200"
+            className="bg-white text-orange-600 font-semibold px-8 py-3 rounded-full shadow hover:bg-orange-500 hover:text-white transition"
           >
             Skontaktuj się z nami
           </a>
         </div>
 
+        {/* Opinie */}
         <div className="mt-24 text-center">
           <h3 className="text-4xl font-extrabold text-orange-500 mb-10">Opinie Naszych Klientów</h3>
           <div className="flex justify-center gap-12 flex-wrap">
             <div className="bg-white rounded-lg shadow-xl p-8 max-w-xs">
-              <p className="text-gray-700 mb-4">"Dzięki pakietowi Premium poprawiłem swoją formę w zaledwie 2 miesiące! Trenerzy są profesjonalni i zawsze gotowi do pomocy." - Michał</p>
+              <p className="text-gray-700 mb-4">
+                "Paulina to trenerka z pasją. Pilnuje treningów, diety i naprawdę chce pomóc. Zero ściemy, pełen profesjonalizm!" - Rafał
+              </p>
             </div>
             <div className="bg-white rounded-lg shadow-xl p-8 max-w-xs">
-              <p className="text-gray-700 mb-4">"Pakiet Standardowy to dla mnie idealne rozwiązanie. Cieszę się z postępów i indywidualnego podejścia!" - Agnieszka</p>
+              <p className="text-gray-700 mb-4">
+                "Trenuję z Pauliną od dawna i efekty są świetne. Motywuje, wspiera, a atmosfera w HAS Academy jest mega!" - Kasia
+              </p>
             </div>
             <div className="bg-white rounded-lg shadow-xl p-8 max-w-xs">
-              <p className="text-gray-700 mb-4">"Zdecydowanie polecam! Treningi są dostosowane do moich potrzeb, a efekty są widoczne!" - Jakub</p>
+              <p className="text-gray-700 mb-4">
+                "Miałem problem z plecami – zniknął po kilku spotkaniach! Indywidualne podejście i ogromna wiedza." - Tomek
+              </p>
             </div>
           </div>
         </div>
+      </div>
 
-       
-        </div>
-        {/* <KontaktHome /> */}
-        <footer className="bg-black text-white py-4">
+      <footer className="bg-black text-white py-4">
         <div className="text-center">
           <p className="text-sm">&copy; 2024 HasAcademy. Wszelkie prawa zastrzeżone.</p>
         </div>
