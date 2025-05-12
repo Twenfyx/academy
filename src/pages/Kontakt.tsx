@@ -1,5 +1,6 @@
 // Kontakt.tsx
-import React from 'react';
+import React, { useRef } from 'react';
+import emailjs from 'emailjs-com';
 import Navbar from '../components/Navbar';
 
 import iconCall from "../icons/call.png";
@@ -7,8 +8,33 @@ import iconClock from "../icons/clock.png";
 import iconEmail from "../icons/email.png";
 import iconLocation from "../icons/location.png";
 import iconLink from "../icons/link.png";
+import logo from "../images/logoNobg.png";
+import { Link } from 'react-router-dom';
 
 const Kontakt: React.FC = () => {
+  const formRef = useRef<HTMLFormElement | null>(null);
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!formRef.current) return;
+
+    emailjs.sendForm(
+      'service_2reuyys',       // replace with your service ID
+      'template_fphabvq',      // replace with your template ID
+      formRef.current,
+      '2wyY1eSPgy-VUtYgK'        // replace with your EmailJS public key
+    )
+    .then(() => {
+      alert("Wiadomość została wysłana!");
+      formRef.current?.reset();
+    })
+    .catch((error) => {
+      console.error('Email error:', error);
+      alert("Wystąpił błąd podczas wysyłania wiadomości.");
+    });
+  };
+
   return (
     <>
       <Navbar />
@@ -20,7 +46,7 @@ const Kontakt: React.FC = () => {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
-            {/* Dane kontaktowe z ikonami */}
+            {/* Dane kontaktowe */}
             <div className="bg-white text-gray-800 rounded-xl p-8 shadow-lg space-y-6">
               <div className="flex items-start space-x-4">
                 <img src={iconLocation} alt="Lokalizacja" className="h-6 mt-1" />
@@ -55,22 +81,8 @@ const Kontakt: React.FC = () => {
                 <div>
                   <p className="text-lg font-semibold">Znajdź nas:</p>
                   <div className="flex space-x-4 mt-1">
-                    <a
-                      href="https://facebook.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-orange-500 hover:underline"
-                    >
-                      Facebook
-                    </a>
-                    <a
-                      href="https://instagram.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-orange-500 hover:underline"
-                    >
-                      Instagram
-                    </a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-orange-500 hover:underline">Facebook</a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-orange-500 hover:underline">Instagram</a>
                   </div>
                 </div>
               </div>
@@ -79,12 +91,14 @@ const Kontakt: React.FC = () => {
             {/* Formularz kontaktowy */}
             <div className="bg-white text-gray-800 rounded-xl p-8 shadow-lg">
               <h3 className="text-2xl font-bold text-orange-500 mb-4">Formularz Kontaktowy</h3>
-              <form className="space-y-4">
+              <form ref={formRef} onSubmit={sendEmail} className="space-y-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-1 text-gray-700">Imię i Nazwisko</label>
                   <input
                     type="text"
                     id="name"
+                    name="user_name"
+                    required
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-orange-500"
                     placeholder="Wpisz swoje imię i nazwisko"
                   />
@@ -94,6 +108,8 @@ const Kontakt: React.FC = () => {
                   <input
                     type="email"
                     id="email"
+                    name="user_email"
+                    required
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-orange-500"
                     placeholder="Wpisz swój email"
                   />
@@ -102,6 +118,8 @@ const Kontakt: React.FC = () => {
                   <label htmlFor="message" className="block text-sm font-medium mb-1 text-gray-700">Wiadomość</label>
                   <textarea
                     id="message"
+                    name="message"
+                    required
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-orange-500"
                     placeholder="Wpisz swoją wiadomość"
                     rows={4}
@@ -131,13 +149,22 @@ const Kontakt: React.FC = () => {
             ></iframe>
           </div>
         </div>
+
+        <div className="flex justify-center mt-16">
+          <img src={logo} alt="HAS Academy Logo" className="h-32 w-auto" />
+        </div>
       </div>
 
-      <footer className="bg-black text-white py-4">
-        <div className="text-center">
-          <p className="text-sm">&copy; 2024 HasAcademy. Wszelkie prawa zastrzeżone.</p>
-        </div>
-      </footer>
+           {/* Stopka */}
+           <footer className="bg-black text-white py-4">
+       <div className="flex justify-center items-center gap-4 text-sm flex-wrap text-center px-4">
+         <span>&copy; 2025 HasAcademy. Wszelkie prawa zastrzeżone.</span>
+         <span className="hidden sm:inline">|</span>
+         <Link to="/polityka-prywatnosci" className="underline hover:text-orange-500">
+           Polityka Prywatności
+         </Link>
+       </div>
+     </footer>
     </>
   );
 };

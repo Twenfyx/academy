@@ -42,20 +42,20 @@ const trainers: Trainer[] = [
 
 const Trenerzy = () => {
   return (
-    <div className="py-24 bg-white">
+    <div className="py-24 bg-white px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-extrabold text-orange-500 mb-16">Nasi Trenerzy</h2>
-        <div className="flex justify-center">
-          <div className="flex justify-center gap-16">
-            {trainers.map((trainer, index) => (
-              <TrainerCard key={index} trainer={trainer} />
-            ))}
-          </div>
+        
+        {/* Grid for trainer cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
+          {trainers.map((trainer, index) => (
+            <TrainerCard key={index} trainer={trainer} />
+          ))}
         </div>
 
         {/* Logo Section */}
         <div className="flex justify-center mt-16">
-          <img src={logo} alt="HAS Academy Logo" className="h-32 w-auto" />
+          <img src={logo} alt="HAS Academy Logo" className="h-24 sm:h-32 w-auto" />
         </div>
       </div>
     </div>
@@ -68,16 +68,16 @@ interface TrainerCardProps {
 
 const TrainerCard: React.FC<TrainerCardProps> = ({ trainer }) => {
   return (
-    <div className="flex flex-col items-center bg-white rounded-xl shadow-lg p-8 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:translate-y-2">
-      <div className="relative w-40 h-40 mb-6">
+    <div className="flex flex-col items-center bg-white rounded-xl shadow-lg p-6 sm:p-8 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:translate-y-2 w-full max-w-[240px]">
+      <div className="relative w-32 h-32 sm:w-40 sm:h-40 mb-6">
         <img
           src={trainer.img}
           alt={`Trener ${trainer.name}`}
           className="w-full h-full object-cover rounded-full border-4 border-orange-500 shadow-xl"
         />
       </div>
-      <h3 className="text-2xl font-semibold text-gray-800 mb-2">{trainer.name}</h3>
-      <p className="text-gray-600 text-lg">{trainer.shortDesc}</p>
+      <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-2">{trainer.name}</h3>
+      <p className="text-gray-600 text-sm sm:text-base text-center">{trainer.shortDesc}</p>
     </div>
   );
 };

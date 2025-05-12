@@ -6,6 +6,7 @@ import Trenerzy from '../components/Trenerzy';
 import Uslugi from '../components/Uslugi';
 import Pytania from '../components/Pytania';
 import KontaktHome from '../components/KontaktHome';
+import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
   return (
@@ -29,10 +30,17 @@ const Home: React.FC = () => {
       
       {/* Stopka */}
       <footer className="bg-black text-white py-4">
-        <div className="text-center">
-          <p className="text-sm">&copy; 2024 HasAcademy. Wszelkie prawa zastrzeżone.</p>
-        </div>
-      </footer>
+  <div className="flex justify-center items-center gap-4 text-sm flex-wrap text-center px-4">
+    <span>&copy; 2025 HasAcademy. Wszelkie prawa zastrzeżone.</span>
+    <span className="hidden sm:inline">|</span>
+    <Link to="/polityka-prywatnosci" className="underline hover:text-orange-500">
+      Polityka Prywatności
+    </Link>
+  </div>
+</footer>
+
+
+
       
     </div>
   );
