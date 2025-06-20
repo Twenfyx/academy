@@ -26,10 +26,16 @@ const Navbar: React.FC = () => {
 
           {/* Centered Logo with Link */}
           <div className="absolute left-1/2 transform -translate-x-1/2">
-            <Link to="/" className="flex items-center justify-center">
-              <img src={logoNobg} alt="HAS Academy Logo" className="h-20 drop-shadow-lg transition transform hover:scale-105" />
-            </Link>
-          </div>
+  <Link to="/" className="flex items-center justify-center space-x-3">
+    <img
+      src={logoNobg}
+      alt="HAS Academy Logo"
+      className="h-20 drop-shadow-lg transition transform hover:scale-105"
+    />
+    {/* <span className="text-white text-2xl font-semibold">HasAcademy</span> */}
+  </Link>
+</div>
+
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">

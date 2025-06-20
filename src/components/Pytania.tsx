@@ -43,7 +43,7 @@ const faqData = [
 
 const Pytania = () => {
   return (
-    <div className="my-20 text-center pt-8">
+    <div className="mt-20 text-center pt-8">
       {/* Logo Section */}
      
 
@@ -53,7 +53,7 @@ const Pytania = () => {
           <FAQItem key={index} question={item.question} answer={item.answer} />
         ))}
       </div>
-      <div className="flex justify-center mt-8">
+      <div className="flex justify-center py-16">
         <img src={logo} alt="HAS Academy Logo" className="h-32 w-auto" />
       </div>
     </div>

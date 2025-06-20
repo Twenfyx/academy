@@ -7,9 +7,12 @@ import AboutUs from './pages/About';
 import Cennik from './pages/Cennik';
 import Kontakt from './pages/Kontakt';
 import Polityka from './pages/Polityka';
+import ScrollToTop from './components/ScrollToTop';
 
 const App: React.FC = () => {
   return (
+    <>
+       <ScrollToTop />
     <Routes>
       <Route>
 
@@ -21,6 +24,7 @@ const App: React.FC = () => {
         {/* Add more routes as needed */}
       </Route>
     </Routes>
+    </>
   );
 };
 

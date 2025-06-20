@@ -38,7 +38,7 @@ const Kontakt: React.FC = () => {
   return (
     <>
       <Navbar />
-      <div className="bg-gray-100 py-20">
+      <div className="bg-gray-100 pt-20">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h2 className="text-4xl font-extrabold text-orange-500 mb-6">Skontaktuj Się z Nami</h2>
           <p className="text-lg text-gray-700 mb-12">
@@ -150,7 +150,7 @@ const Kontakt: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex justify-center mt-16">
+        <div className="flex justify-center py-16">
           <img src={logo} alt="HAS Academy Logo" className="h-32 w-auto" />
         </div>
       </div>

@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 import logo from "../images/logoNobg.png";
 import { Link } from 'react-router-dom';
 const Cennik: React.FC = () => {
-  return (
+  return ( 
     <>
       <Navbar />
       <div className="bg-gray-100 min-h-screen">
@@ -127,12 +127,13 @@ const Cennik: React.FC = () => {
             <p className="mb-6 text-lg">
               Wybierz najlepszą opcję i skontaktuj się z nami, aby rozpocząć swoją przygodę z HAS Academy.
             </p>
-            <a
-              href="/contact"
-              className="bg-white text-orange-500 font-semibold px-10 py-4 rounded-full shadow-md hover:bg-orange-500 hover:text-white transition"
-            >
-              Skontaktuj się z nami
-            </a>
+ <Link to="/kontakt"
+  className="bg-white text-orange-500 font-semibold px-10 py-4 rounded-full shadow-md transition-all duration-300 ease-in-out
+             hover:bg-orange-600 hover:text-white hover:scale-105 hover:shadow-xl"
+>
+  Skontaktuj się z nami
+</Link>
+
           </div>
 
           {/* Opinie */}
@@ -155,7 +156,7 @@ const Cennik: React.FC = () => {
           </div>
 
           {/* Logo */}
-          <div className="flex justify-center my-20">
+          <div className="flex justify-center py-16">
             <img src={logo} alt="HAS Academy Logo" className="h-32 w-auto" />
           </div>
 

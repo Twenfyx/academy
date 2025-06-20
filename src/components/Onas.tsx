@@ -3,6 +3,7 @@ import img3 from '../images/22.jpg';
 import img5 from '../images/paula2R.jpeg'; // Currently unused
 import img6 from '../images/6R.jpg';
 
+
 const Onas = () => {
   return (
     <div className="bg-gray-100 py-16">

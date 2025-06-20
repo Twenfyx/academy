@@ -42,7 +42,7 @@ const trainers: Trainer[] = [
 
 const Trenerzy = () => {
   return (
-    <div className="py-24 bg-white px-4 sm:px-6 lg:px-8">
+    <div className="pt-24 bg-white px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-extrabold text-orange-500 mb-16">Nasi Trenerzy</h2>
         
@@ -54,7 +54,7 @@ const Trenerzy = () => {
         </div>
 
         {/* Logo Section */}
-        <div className="flex justify-center mt-16">
+        <div className="flex justify-center py-16">
           <img src={logo} alt="HAS Academy Logo" className="h-24 sm:h-32 w-auto" />
         </div>
       </div>
